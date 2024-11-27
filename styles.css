@@ -1,0 +1,129 @@
+body {
+    margin: 0;
+    padding: 0;
+	font-family: 'Quattrocento Sans', sans-serif;
+    background: linear-gradient(to bottom, #ffffff, #f0f0f0); /* You can change the gradient colors */
+    text-align: center;
+    color: #eeeeee;
+}
+
+
+.profile img {
+    border-radius: 50%;
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+}
+
+.profile h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.profile p {
+    font-size: 16px;
+    color: #888;
+    margin: 0;
+}
+
+.description {
+    max-width: 600px; /* Set a reasonable max width for desktop readability */
+    text-align: left; /* Center text within the max-width container */
+}
+}
+
+.name u {
+    font-size: 24px;
+	margin: 0;
+}
+
+.name h1 {
+    margin-top:1px;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 0.03em;
+}
+
+.description h2 {
+    font-size: 24px;
+	margin: 1px;
+    font-family: 'Abril Fatface', cursive;
+    letter-spacing: 0.03em;
+}
+
+.description p {
+    font-size: 20px; /* Adjust font size for better readability on mobile */
+    max-width: 100%; /* Ensure text doesn't overflow on mobile */
+}
+
+.description ul {
+	margin: 10px;
+	font-size: 20px; /* Adjust font size for better readability on mobile */
+
+}
+
+
+.social {
+    margin-top: 20px; /* Increase margin for better spacing on mobile */
+}
+
+.social a {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.social img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.social img:hover {
+    opacity: 1;
+}
+
+/* Your existing CSS styles */
+
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Changed min-height to ensure content is centered */
+    padding: 20px; /* Add padding to the entire container */
+    background: linear-gradient(to bottom, #1f1f1f, #000000);
+}
+.info {
+    display: flex;
+    flex-direction: column; /* Display profession and location vertically on mobile */
+    align-items: center;
+    text-align: center; /* Center text on mobile */
+    margin-top: -20px; /* Increase margin for better spacing on mobile */
+    margin-bottom: 20px; /* Increase margin for better spacing on mobile */
+
+}
+
+.icon {
+    display: flex;
+    align-items: center;
+}
+
+
+.icon p {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.content {
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 800px; /* Set a maximum width for the content */
+    padding: 20px; /* Add padding inside the outline */
+}
+
+a {
+    text-decoration: none;
+    background-color: none;
+    color: #eeeeee;
+}
