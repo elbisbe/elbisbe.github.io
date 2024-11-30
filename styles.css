@@ -61,9 +61,16 @@ body {
 }
 
 
-.social {
+
+
+.presocial {
     margin-top: 20px; /* Increase margin for better spacing on mobile */
 }
+
+.social {
+    margin-top: 5px; /* Increase margin for better spacing on mobile */
+}
+
 
 .social a {
     display: inline-block;
