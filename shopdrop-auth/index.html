@@ -1,0 +1,27 @@
+<!doctype html>
+<!--
+  shopdrop sign-in bridge. Bungie only redirects OAuth to https URLs, so this static page
+  receives ?code=…&state=… and hands them to the desktop app listening on 127.0.0.1.
+  It sends nothing anywhere else; the code is useless without the app's client secret.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="no-referrer" />
+    <title>shopdrop sign-in</title>
+    <style>
+      body { margin: 0; height: 100vh; display: grid; place-items: center; background: #0e1013; color: #e6e8eb; font: 16px system-ui, sans-serif; }
+      a { color: #f2c14e; }
+    </style>
+  </head>
+  <body>
+    <p id="msg">Returning to shopdrop…</p>
+    <script>
+      const target = "http://127.0.0.1:47652/callback" + location.search;
+      document.getElementById("msg").innerHTML =
+        'Returning to shopdrop… If nothing happens, make sure the app is open and <a href="' + target + '">click here</a>.';
+      location.replace(target);
+    </script>
+  </body>
+</html>
