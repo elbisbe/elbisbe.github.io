@@ -1,7 +1,10 @@
 <!doctype html>
 <!--
-  shopdrop sign-in bridge. Bungie only redirects OAuth to https URLs, so this static page
-  receives ?code=…&state=… and hands them to the desktop app listening on 127.0.0.1.
+  shopdrop sign-in bridge (published at https://elbisbe.dev/shopdrop-auth/, the Bungie app's one
+  redirect URL). Bungie only redirects OAuth to https URLs, so this static page receives
+  ?code=…&state=… and hands them on:
+    - state "web.…"  → the website, https://shopdrop.elbisbe-hq.dev/auth/callback
+    - anything else  → the desktop app listening on http://127.0.0.1:47652/callback
   It sends nothing anywhere else; the code is useless without the app's client secret.
 -->
 <html lang="en">
@@ -18,9 +21,12 @@
   <body>
     <p id="msg">Returning to shopdrop…</p>
     <script>
-      const target = "http://127.0.0.1:47652/callback" + location.search;
-      document.getElementById("msg").innerHTML =
-        'Returning to shopdrop… If nothing happens, make sure the app is open and <a href="' + target + '">click here</a>.';
+      const state = new URLSearchParams(location.search).get("state") || "";
+      const web = state.startsWith("web.");
+      const target = (web ? "https://shopdrop.elbisbe-hq.dev/auth/callback" : "http://127.0.0.1:47652/callback") + location.search;
+      document.getElementById("msg").innerHTML = web
+        ? 'Returning to shopdrop… <a href="' + target + '">continue</a>'
+        : 'Returning to shopdrop… If nothing happens, make sure the app is open and <a href="' + target + '">click here</a>.';
       location.replace(target);
     </script>
   </body>
